@@ -3,5 +3,5 @@ import Layout from "../layouts/layout";
 
 export default () => 
     <Layout>
-        <div>Accueil</div>
+        <div>Contact</div>
     </Layout>
