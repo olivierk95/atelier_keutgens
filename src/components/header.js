@@ -1,24 +1,26 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 
-import burgerIcon from "../img/menu-button.svg"
+import BurgerIcon from "../components/burger-icon";
 
 export default function Header() {
-  const[menu, setMenu] = useState(false);
+  const[toggle, setToggle] = useState(false);
 
   function toggleMenu() {
-    setMenu(!menu);
+    setToggle(!toggle);
   }
 
   let show = {
-    display: menu ? "block" : "none"
+    display: toggle ? "block" : "none"
   }
 
   return (
     <header>
+
         <button onClick={toggleMenu}>
-          <img src={burgerIcon} alt="menu"/>
+          <BurgerIcon toggle={toggle} />
         </button>
+
         <div style={ show }>
           <Link to="/" className="menu-item">Accueil</Link>
           <Link to="/projets/" className="menu-item">Projets</Link>
