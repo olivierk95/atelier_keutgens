@@ -24,9 +24,6 @@ export default function Header() {
 
   return (
     <header>
-      <svg width="100vw" viewBox="0 0 100 20">
-        <polygon points="0,0 100,0 100,20 0,10" className="menu-background"/>
-      </svg>
       
       <div className="navigation-menu" style={navigationMenu}>
         <button onClick={toggleMenu} className="menu-button">
