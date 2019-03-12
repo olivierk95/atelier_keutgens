@@ -25,6 +25,8 @@ export default function Header() {
   return (
     <header>
       
+      <div className="header-background" />
+
       <div className="navigation-menu" style={navigationMenu}>
         <button onClick={toggleMenu} className="menu-button">
           <h3 className="menu-title">Menu</h3>

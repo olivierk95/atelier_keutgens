@@ -3,14 +3,18 @@
 
 // VARIABLES
     $color-atelier: #E20B00;
-    $color-michel: #F49D37;
-    $color-sabina: #140F2D;
+    $color-michel: rgb(235, 140, 17);
+    $color-sabina: rgb(228, 225, 36);
     $color-dark: #2E3532;
     $color-light: #7E9181;
     $color-white: #EEEEEE;
 
     $font-sans-serif: 'Hind', sans-serif;
     $font-serif: 'Amiri', serif;
+
+    $clip-path: polygon(0 0, 100% 10vw, 100% 100%, 0 calc(100% - 10vw));
+    $clip-path-top: polygon(0 0, 100% 10vw, 100% 100%, 0 100%);
+    $clip-path-bottom: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 10vw));
 
 // RESET MEYER
     html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -68,7 +72,13 @@
         width: 100%;
         height: 4.6rem;
         z-index: 100;
-        background: linear-gradient(5deg, transparent 39%, $color-light 40%, $color-light 0);
+    }
+
+    .header-background {
+        background-color: $color-light;
+        clip-path: $clip-path-bottom;
+        width: 100%;
+        height: 4.6rem;
     }
 
     .navigation-menu {
@@ -125,34 +135,43 @@
     }
 
 // INDEX
-    .home-background {
-        fill: $color-atelier;
-        position: relative;
+    .carousel {
+        width: 100%;
     }
 
-    .carousel-container {
-        position: relative;
-    }
-
-    .carousel-picture {
+    .picture-container {
         width: 100vw;
+        height: 150vw;
+        overflow: hidden;
+        clip-path: $clip-path;
+        background-size: 200vw auto;
+        background-position: center;
     }
+
 
 // CONTACT
 
     .contact-box {
         width: 100vw;
         height: 20rem;
+        clip-path: $clip-path;
     }
+
+    .box-content {
+    }
+
     .contact-atelier {
-        background: linear-gradient(5deg, transparent 9.5%, $color-atelier 10%, $color-atelier 0 90%, transparent 90.5%, transparent 0);
+        background-color: $color-atelier;
     }
 
     .contact-michel {
-        background: linear-gradient(5deg, transparent 9.5%, $color-michel 10%, $color-michel 0 90%, transparent 90.5%, transparent 0);
+        background-color: $color-michel;
     }
 
     .contact-sabina {
-        background: linear-gradient(5deg, transparent 9.5%, $color-sabina 10%, $color-sabina 0 90%, transparent 90.5%, transparent 0);
+        background-color: $color-sabina;
     }
+
+
+
 
