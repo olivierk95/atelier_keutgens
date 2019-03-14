@@ -1,9 +1,14 @@
-import React from "react"
-import Layout from "../layouts/layout"
+import React from "react";
+import Layout from "../layouts/layout";
+import { Link } from "gatsby";
+
+//Components
+import HomeProfil from "../components/home-profil";
+import HomeExperience from "../components/home-experience";
 
 //Images
-import picture1 from "../img/home-picture1.jpg"
-import picture2 from "../img/home-picture2.jpg"
+import picture1 from "../img/home-picture1.jpg";
+import picture2 from "../img/home-picture2.jpg";
 
 export default class index extends React.Component {
   constructor(props) {
@@ -36,11 +41,18 @@ export default class index extends React.Component {
   render() {
     return (
       <Layout>
-        <div className="carousel">
-          <div className="picture-container" style={{backgroundImage: `url(${this.state.pictures[this.state.currentPicture]})`}}>
+          <div className="home-carousel" style={{backgroundImage: `url(${this.state.pictures[this.state.currentPicture]})`}}>
             <h1>Atelier d'Architecture Keutgens</h1>
+            <p>Région liégeoise</p>
+            <h2>Réalisons le projets de votre vie.</h2>
+            <button className="primary-button">
+              <Link to="/projets">Voir notre portfolio</Link>
+            </button>
           </div>
-        </div>
+
+         <HomeProfil />
+
+         <HomeExperience />
       </Layout>
     )
   }

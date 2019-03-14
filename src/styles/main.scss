@@ -1,67 +1,57 @@
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
-
-// VARIABLES
-    $color-atelier: #E20B00;
-    $color-michel: rgb(235, 140, 17);
-    $color-sabina: rgb(228, 225, 36);
-    $color-dark: #2E3532;
-    $color-light: #7E9181;
-    $color-white: #EEEEEE;
-
-    $font-sans-serif: 'Hind', sans-serif;
-    $font-serif: 'Amiri', serif;
-
-    $clip-path: polygon(0 0, 100% 10vw, 100% 100%, 0 calc(100% - 10vw));
-    $clip-path-top: polygon(0 0, 100% 10vw, 100% 100%, 0 100%);
-    $clip-path-bottom: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 10vw));
-
-// RESET MEYER
-    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline;
-        text-decoration: none;
-    }
-    /* HTML5 display-role reset for older browsers */
-    article, aside, details, figcaption, figure, 
-    footer, header, hgroup, menu, nav, section {
-        display: block;
-    }
-    body {
-        line-height: 1;
-    }
-    ol, ul {
-        list-style: none;
-    }
-    blockquote, q {
-        quotes: none;
-    }
-    blockquote:before, blockquote:after,
-    q:before, q:after {
-        content: '';
-        content: none;
-    }
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
-
-    button {
-        background-color: transparent;
-        border: none;
-        outline: none;
-    }
+@import "./reset.scss";
+@import "./variables.scss";
+@import "./mixins.scss";
 
 // DEFAULT
     body {
         font-family: $font-serif;
         min-height: 100vh;
         background-color: $color-white;
-        max-width: 100vw;
+        max-width: 100%;
+    }
+
+    button {
+        border-radius: 2rem;
+    }
+
+    a {
+        color: $color-white;
+        font-family: $font-serif;
+    }
+
+    .primary-button {
+        background-color: $color-atelier;
+        color: $color-white;
+        padding: .2rem .6rem;
+        font-size: 1.2rem;
+    }
+
+    .secondary-button {
+        background-color: $color-white;
+        padding: .2rem .6rem;
+        font-size: 1.1rem;
+
+        a {
+            color: $color-dark;
+        }
+    }
+
+    h1 {
+        color: $color-atelier;
+        font-family: $font-sans-serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+
+    h2 {
+        color: $color-white;
+        font-size: 1.5rem;
+        font-family: $font-sans-serif;
+    }
+
+    p {
+        color: $color-white;
+        font-size: 0.9rem;
     }
 
 // HEADER
@@ -69,15 +59,14 @@
     header {
         position: fixed;
         top:0;
-        width: 100%;
+        width: 100vw;
         height: 4.6rem;
         z-index: 100;
     }
 
     .header-background {
         background-color: $color-light;
-        clip-path: $clip-path-bottom;
-        width: 100%;
+        @include parallelogram-bottom(100);
         height: 4.6rem;
     }
 
@@ -129,32 +118,66 @@
         text-align: center;
     }
 
+// FOOTER
+    footer{
+        height: 7rem;
+        @include parallelogram-top(100);
+        background-color: $color-light;
+    }
+
 // CONTAINER
     .container {
         margin-top: 20vw;
     }
 
 // INDEX
-    .carousel {
-        width: 100%;
-    }
 
-    .picture-container {
-        width: 100vw;
-        height: 150vw;
-        overflow: hidden;
-        clip-path: $clip-path;
-        background-size: 200vw auto;
+    .home-carousel {
+        @include parallelogram(100);
+        height: 30rem;
+        background-size: 40rem auto;
         background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
 
+    .equipe {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-profil {
+        height: 20rem;
+        @include parallelogram(80);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-michel{
+        background-color: $color-michel;
+        align-self: flex-end;
+    }
+
+    .home-sabina{
+        background-color: $color-sabina;
+    }
+
+    .home-experience{
+        background-color: $color-michel;
+        @include parallelogram(100);
+        display: flex;
+        flex-direction: column;
+    }
 
 // CONTACT
 
     .contact-box {
-        width: 100vw;
         height: 20rem;
-        clip-path: $clip-path;
+        @include parallelogram(100);
     }
 
     .box-content {
@@ -173,5 +196,10 @@
     }
 
 
+// EXPORTS
 
+:export {
+    color-atelier: $color-atelier;
+    color-light: $color-light;
+}
 
