@@ -1,6 +1,18 @@
 import React from "react";
 import { Link } from "gatsby";
+import variables from '../styles/abstracts/variables.scss';
+import parallelogram from '../styles/elements/parallelogram';
 import styled from 'styled-components';
+
+const Experiences = styled.div`
+    background-color: ${variables.colorMichel};
+    ${parallelogram(100)};
+`
+
+const Experience = styled.div`
+    background-color: ${variables.colorLight};
+    ${parallelogram(70)};
+`
 
 export default function homeExperience() {
     const experience = [
@@ -60,7 +72,7 @@ export default function homeExperience() {
 
         return (
 
-                <div>
+                <Experience>
                     <h1>{el.title}</h1>
                     <ul>
                         {examplesMap}
@@ -68,18 +80,17 @@ export default function homeExperience() {
                     <button className="primary-button">
                         <Link to="/projets">Découvrir</Link>
                     </button>
-                </div>
+                </Experience>
 
         );
     })
     
 
     return (
-        <div className="home-experience">
-            <h3>De l'expérience</h3>
+        <Experiences className="home-experience">
+                <h3>De l'expérience</h3>
 
-            {experienceMap}
-
-        </div>
+                {experienceMap}
+        </Experiences>
     )
 }

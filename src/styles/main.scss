@@ -1,6 +1,6 @@
-@import "./reset.scss";
-@import "./variables.scss";
-@import "./mixins.scss";
+@import "./abstracts/reset.scss";
+@import "./abstracts/variables.scss";
+@import "./abstracts/mixins.scss";
 
 // DEFAULT
     body {
@@ -59,7 +59,6 @@
     header {
         position: fixed;
         top:0;
-        width: 100vw;
         height: 4.6rem;
         z-index: 100;
     }
@@ -198,8 +197,4 @@
 
 // EXPORTS
 
-:export {
-    color-atelier: $color-atelier;
-    color-light: $color-light;
-}
 

@@ -1,0 +1,26 @@
+// COLORS
+    $color-atelier: #E20B00;
+    $color-michel: rgb(235, 140, 17);
+    $color-sabina: rgb(228, 225, 36);
+    $color-dark: #2E3532;
+    $color-light: #7E9181;
+    $color-white: #EEEEEE;
+
+// FONT 
+    $font-sans-serif: 'Hind', sans-serif;
+    $font-serif: 'Amiri', serif;
+
+// MEASURES
+    $parallelogram-slope: 10vw;
+
+// EXPORT
+:export {
+    colorAtelier: $color-atelier;
+    colorMichel: $color-michel;
+    colorSabina: $color-sabina;
+    colorDark: $color-dark;
+    colorLight: $color-light;
+    colorWhite: $color-white;
+    fontSansSerif: $font-sans-serif;
+    fontSerif: $font-serif;
+}
