@@ -1,26 +1,35 @@
 import React from "react";
 import Layout from "../layouts/layout";
 
+//CSS
+import parallelogram from '../styles/elements/parallelogram';
+import styled from 'styled-components';
+
+const Contact = styled.div`
+    ${parallelogram(100)};
+    height: 20rem;
+`
+
 export default function contact() {
     return (
         <Layout>
-            <div className="contact-box contact-atelier">
-                <div className="box-content">
+            <Contact className="atelier">
+                <div>
                     <p>Bonjour</p>
                 </div>
-            </div>
+            </Contact>
 
-            <div className="contact-box contact-michel">
-                <div className="box-content">
+            <Contact className="michel">
+                <div>
                     <p>Bonjour</p>
                 </div>
-            </div>
+            </Contact>
 
-            <div className="contact-box contact-sabina">
-                <div className="box-content">
+            <Contact className="sabina">
+                <div>
                     <p>Bonjour</p>
                 </div>
-            </div>
+            </Contact>
 
         </Layout>
     );

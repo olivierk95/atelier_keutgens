@@ -10,6 +10,20 @@ import HomeExperience from "../components/home-experience";
 import picture1 from "../img/home-picture1.jpg";
 import picture2 from "../img/home-picture2.jpg";
 
+//CSS
+import parallelogram from '../styles/elements/parallelogram';
+import styled from 'styled-components';
+
+const Carousel = styled.div`
+    ${parallelogram(100)};
+    height: 30rem;
+    background-size: 40rem auto;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+`
 export default class index extends React.Component {
   constructor(props) {
     super(props)
@@ -41,14 +55,14 @@ export default class index extends React.Component {
   render() {
     return (
       <Layout>
-          <div className="home-carousel" style={{backgroundImage: `url(${this.state.pictures[this.state.currentPicture]})`}}>
+          <Carousel style={{backgroundImage: `url(${this.state.pictures[this.state.currentPicture]})`}}>
             <h1>Atelier d'Architecture Keutgens</h1>
             <p>Région liégeoise</p>
             <h2>Réalisons le projets de votre vie.</h2>
             <button className="primary-button">
               <Link to="/projets">Voir notre portfolio</Link>
             </button>
-          </div>
+          </Carousel>
 
          <HomeProfil />
 

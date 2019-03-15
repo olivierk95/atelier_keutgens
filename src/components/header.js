@@ -3,7 +3,53 @@ import { Link } from "gatsby";
 
 import BurgerIcon from "../components/burger-icon";
 
-export default function Header() {
+//CSS
+import variables from '../styles/abstracts/variables.scss';
+import { parallelogramBottom } from '../styles/elements/parallelogram';
+import styled from 'styled-components';
+
+const Header = styled.header`
+  position: fixed;
+  top:0;
+  height: 4.6rem;
+  z-index: 100;
+`
+const Background = styled.div`
+  background-color: ${variables.colorLight};
+  ${parallelogramBottom(100)};
+  height: 4.6rem;
+`
+const Navigation = styled.div`
+  position: fixed;
+  top: .5rem;
+  right: .5rem;
+`
+const Button = styled.button`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+`
+const Title = styled.h3`
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  text-transform: uppercase;
+  color: ${variables.colorDark};
+  font-size: .75rem;
+  font-weight: bold;
+  margin-right: .2rem;
+`
+const Menu = styled.div`
+  flex-direction: column;
+`
+const Links = styled(Link)`
+  font-size: 1.3rem;
+  margin: 1rem;
+  color: ${variables.colorDark};
+  text-align: center;
+`
+
+export default function header() {
   const[toggle, setToggle] = useState(false);
 
   function toggleMenu() {
@@ -23,24 +69,24 @@ export default function Header() {
   }
 
   return (
-    <header>
+    <Header>
       
-      <div className="header-background" />
+      <Background />
 
-      <div className="navigation-menu" style={navigationMenu}>
-        <button onClick={toggleMenu} className="menu-button">
-          <h3 className="menu-title">Menu</h3>
+      <Navigation style={navigationMenu}>
+        <Button onClick={toggleMenu}>
+          <Title>Menu</Title>
           <BurgerIcon toggle={toggle} />
-        </button>
+        </Button>
 
-        <div style={ show } className="menu">
-          <Link to="/" className="menu-item">Accueil</Link>
-          <Link to="/projets/" className="menu-item">Projets</Link>
-          <Link to="/atelier/" className="menu-item">Atelier</Link>
-          <Link to="/contact/" className="menu-item">Contact</Link>
-        </div>
-      </div>
+        <Menu style={ show }>
+          <Links to="/">Accueil</Links>
+          <Links to="/projets/">Projets</Links>
+          <Links to="/atelier/">Atelier</Links>
+          <Links to="/contact/">Contact</Links>
+        </Menu>
+      </Navigation>
 
-    </header>
+    </Header>
   );
 }

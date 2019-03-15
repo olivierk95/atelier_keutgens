@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
+
+//CSS
 import variables from '../styles/abstracts/variables.scss';
 import parallelogram from '../styles/elements/parallelogram';
 import styled from 'styled-components';
@@ -7,6 +9,10 @@ import styled from 'styled-components';
 const Experiences = styled.div`
     background-color: ${variables.colorMichel};
     ${parallelogram(100)};
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
 `
 
 const Experience = styled.div`
@@ -87,7 +93,7 @@ export default function homeExperience() {
     
 
     return (
-        <Experiences className="home-experience">
+        <Experiences>
                 <h3>De l'expérience</h3>
 
                 {experienceMap}

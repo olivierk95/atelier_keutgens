@@ -1,200 +1,66 @@
 @import "./abstracts/reset.scss";
 @import "./abstracts/variables.scss";
-@import "./abstracts/mixins.scss";
 
-// DEFAULT
-    body {
-        font-family: $font-serif;
-        min-height: 100vh;
-        background-color: $color-white;
-        max-width: 100%;
-    }
 
-    button {
-        border-radius: 2rem;
-    }
+body {
+    font-family: $font-serif;
+    min-height: 100vh;
+    background-color: $color-white;
+    max-width: 100%;
+}
+
+button {
+    border-radius: 2rem;
+}
+
+a {
+    color: $color-white;
+    font-family: $font-serif;
+}
+
+h1 {
+    color: $color-atelier;
+    font-family: $font-sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+h2 {
+    color: $color-white;
+    font-size: 1.5rem;
+    font-family: $font-sans-serif;
+}
+
+p {
+    color: $color-white;
+    font-size: 0.9rem;
+}
+
+.primary-button {
+    background-color: $color-atelier;
+    color: $color-white;
+    padding: .2rem .6rem;
+    font-size: 1.2rem;
+}
+
+.secondary-button {
+    background-color: $color-white;
+    padding: .2rem .6rem;
+    font-size: 1.1rem;
 
     a {
-        color: $color-white;
-        font-family: $font-serif;
-    }
-
-    .primary-button {
-        background-color: $color-atelier;
-        color: $color-white;
-        padding: .2rem .6rem;
-        font-size: 1.2rem;
-    }
-
-    .secondary-button {
-        background-color: $color-white;
-        padding: .2rem .6rem;
-        font-size: 1.1rem;
-
-        a {
-            color: $color-dark;
-        }
-    }
-
-    h1 {
-        color: $color-atelier;
-        font-family: $font-sans-serif;
-        font-size: 1.6rem;
-        font-weight: 700;
-    }
-
-    h2 {
-        color: $color-white;
-        font-size: 1.5rem;
-        font-family: $font-sans-serif;
-    }
-
-    p {
-        color: $color-white;
-        font-size: 0.9rem;
-    }
-
-// HEADER
-
-    header {
-        position: fixed;
-        top:0;
-        height: 4.6rem;
-        z-index: 100;
-    }
-
-    .header-background {
-        background-color: $color-light;
-        @include parallelogram-bottom(100);
-        height: 4.6rem;
-    }
-
-    .navigation-menu {
-        position: fixed;
-        top: .5rem;
-        right: .5rem;
-    }
-
-    .burger-icon {
-        width: 2.5rem;
-        cursor: pointer;
-        transition: 0.5s;
-    }
-
-    .burger-bar {
-        width: 2.5rem;
-        height: .4rem;
-        background-color: $color-dark;
-        margin: .4rem 0;
-        transition: 0.5s;
-    }
-
-    .menu-button {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        justify-content: flex-end;
-    }
-    
-    .menu-title {
-        writing-mode: vertical-lr;
-        transform: rotate(180deg);
-        text-transform: uppercase;
         color: $color-dark;
-        font-size: .75rem;
-        font-weight: bold;
-        margin-right: .2rem;
     }
+}
 
-    .menu {
-        flex-direction: column;
-    }
+.atelier{
+    background-color: $color-atelier;
+}
 
-    .menu-item {
-        font-size: 1.3rem;
-        margin: 1rem;
-        color: $color-dark;
-        text-align: center;
-    }
+.michel{
+    background-color: $color-michel;
+}
 
-// FOOTER
-    footer{
-        height: 7rem;
-        @include parallelogram-top(100);
-        background-color: $color-light;
-    }
-
-// CONTAINER
-    .container {
-        margin-top: 20vw;
-    }
-
-// INDEX
-
-    .home-carousel {
-        @include parallelogram(100);
-        height: 30rem;
-        background-size: 40rem auto;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    .equipe {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .home-profil {
-        height: 20rem;
-        @include parallelogram(80);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .home-michel{
-        background-color: $color-michel;
-        align-self: flex-end;
-    }
-
-    .home-sabina{
-        background-color: $color-sabina;
-    }
-
-    .home-experience{
-        background-color: $color-michel;
-        @include parallelogram(100);
-        display: flex;
-        flex-direction: column;
-    }
-
-// CONTACT
-
-    .contact-box {
-        height: 20rem;
-        @include parallelogram(100);
-    }
-
-    .box-content {
-    }
-
-    .contact-atelier {
-        background-color: $color-atelier;
-    }
-
-    .contact-michel {
-        background-color: $color-michel;
-    }
-
-    .contact-sabina {
-        background-color: $color-sabina;
-    }
-
-
-// EXPORTS
-
-
+.sabina{
+    background-color: $color-sabina;
+}

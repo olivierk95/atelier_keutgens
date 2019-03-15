@@ -1,5 +1,23 @@
 import React from "react";
 
+//CSS
+import variables from '../styles/abstracts/variables.scss';
+import styled from 'styled-components';
+
+const Burger = styled.div`
+    width: 2.5rem;
+    cursor: pointer;
+    transition: 0.5s;
+`
+
+const Bar = styled.div`
+    width: 2.5rem;
+    height: .4rem;
+    background-color: ${variables.colorDark};
+    margin: .4rem 0;
+    transition: 0.5s;
+`
+
 export default function BurgerIcon(props) {
     let burger;
     let bar1;
@@ -24,10 +42,10 @@ export default function BurgerIcon(props) {
     }
 
     return (
-        <div style={burger} className="burger-icon">
-            <div className="burger-bar" style={bar1}></div>
-            <div className="burger-bar" style={bar2}></div>
-            <div className="burger-bar" style={bar3}></div>
-        </div>
+        <Burger style={burger}>
+            <Bar className="burger-bar" style={bar1}/>
+            <Bar className="burger-bar" style={bar2}/>
+            <Bar className="burger-bar" style={bar3}/>
+        </Burger>
     );
 }   
