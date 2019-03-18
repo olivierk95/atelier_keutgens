@@ -23,7 +23,10 @@ export default function parallelogram(width) {
     let widthCSS = divWidth(width);
     return (
         `clip-path: ${clipPathCSS};
-        width: ${widthCSS};`
+        width: ${widthCSS};
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        `
     );
 };
 
@@ -32,7 +35,10 @@ export function parallelogramTop(width) {
     let widthCSS = divWidth(width);
     return (
         `clip-path: ${clipPathCSS};
-        width: ${widthCSS};`
+        width: ${widthCSS};
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        `
     );
 };
 
@@ -41,6 +47,9 @@ export function parallelogramBottom(width) {
     let widthCSS = divWidth(width);
     return (
         `clip-path: ${clipPathCSS};
-        width: ${widthCSS};`
+        width: ${widthCSS};
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        `
     );
 };

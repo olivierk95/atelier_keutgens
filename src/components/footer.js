@@ -9,6 +9,7 @@ const Footer = styled.footer`
     ${parallelogramTop(100)};
     background-color: ${variables.colorLight};
     height: 10rem;
+    padding-bottom: 0;
 `
 
 export default function footer(){

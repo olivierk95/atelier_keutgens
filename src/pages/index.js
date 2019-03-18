@@ -5,6 +5,7 @@ import { Link } from "gatsby";
 //Components
 import HomeProfil from "../components/home-profil";
 import HomeExperience from "../components/home-experience";
+import HomeAddedValue from "../components/home-added-value";
 
 //Images
 import picture1 from "../img/home-picture1.jpg";
@@ -23,6 +24,7 @@ const Carousel = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 0;
 `
 export default class index extends React.Component {
   constructor(props) {
@@ -67,6 +69,8 @@ export default class index extends React.Component {
          <HomeProfil />
 
          <HomeExperience />
+
+         <HomeAddedValue />
       </Layout>
     )
   }

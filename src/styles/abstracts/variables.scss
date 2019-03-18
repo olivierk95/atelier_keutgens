@@ -1,7 +1,9 @@
 // COLORS
-    $color-atelier: #E20B00;
-    $color-michel: rgb(235, 140, 17);
-    $color-sabina: rgb(228, 225, 36);
+    $color-atelier: rgb(253, 91, 27);
+    $color-michel: #C4E3CB;
+    $color-michel-title: rgb(52, 160, 77);
+    $color-sabina: #FFF1BC;
+    $color-sabina-title: rgb(170, 123, 53);
     $color-dark: #2E3532;
     $color-light: #7E9181;
     $color-white: #EEEEEE;
@@ -17,7 +19,9 @@
 :export {
     colorAtelier: $color-atelier;
     colorMichel: $color-michel;
+    colorMichelTitle: $color-michel-title;
     colorSabina: $color-sabina;
+    colorSabinaTitle: $color-sabina-title;
     colorDark: $color-dark;
     colorLight: $color-light;
     colorWhite: $color-white;

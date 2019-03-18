@@ -18,6 +18,7 @@ const Background = styled.div`
   background-color: ${variables.colorLight};
   ${parallelogramBottom(100)};
   height: 4.6rem;
+  padding: 0;
 `
 const Navigation = styled.div`
   position: fixed;

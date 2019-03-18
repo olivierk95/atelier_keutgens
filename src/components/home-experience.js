@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "gatsby";
 
+//Images
+import construction from "../img/home-construction.jpg";
+import renovation from "../img/home-renovation.jpg";
+import amenagement from "../img/home-amenagement.jpg";
+import mobilier from "../img/home-mobilier.jpg";
+
 //CSS
 import variables from '../styles/abstracts/variables.scss';
 import parallelogram from '../styles/elements/parallelogram';
@@ -15,16 +21,15 @@ const Experiences = styled.div`
     padding: 2rem 0;
 `
 
-const Experience = styled.div`
-    background-color: ${variables.colorLight};
-    ${parallelogram(70)};
+const Content = styled.div`
+    position: relative;
 `
 
 export default function homeExperience() {
     const experience = [
         {
             title: "Construction",
-            img: "home-mobilier",
+            img: construction,
             examples: [
                 "Maison basse énergie",
                 "Maison passive",
@@ -35,7 +40,7 @@ export default function homeExperience() {
         },
         {
             title: "Rénovation",
-            img: "home-mobilier",
+            img: renovation,
             examples: [
                 "Annexe",
                 "Aménagement",
@@ -46,7 +51,7 @@ export default function homeExperience() {
         },
         {
             title: "Aménagement intérieur",
-            img: "home-mobilier",
+            img: amenagement,
             examples: [
                 "Cuisine",
                 "Salle de bain",
@@ -57,7 +62,7 @@ export default function homeExperience() {
         },
         {
             title: "Mobilier",
-            img: "home-mobilier",
+            img: mobilier,
             examples: [ 
                 "Table de jardin",
                 "Lampe de salon",
@@ -69,8 +74,24 @@ export default function homeExperience() {
     ]; 
 
     const experienceMap = experience.map(el => {
-        
-        var examplesMap = el.examples.map(ex => {
+        const Experience = styled.div`
+            ${parallelogram(70)};
+            position: relative;
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%; 
+                height: 100%;
+                background-size: auto 80vw;
+                background-position: center;
+                background-image: url(${el.img});
+                filter: grayscale(100%);
+            }
+        `
+
+        let examplesMap = el.examples.map(ex => {
             return (
                 <li>{ex}</li>
             )
@@ -79,13 +100,15 @@ export default function homeExperience() {
         return (
 
                 <Experience>
-                    <h1>{el.title}</h1>
-                    <ul>
-                        {examplesMap}
-                    </ul>
-                    <button className="primary-button">
-                        <Link to="/projets">Découvrir</Link>
-                    </button>
+                    <Content>
+                        <h1>{el.title}</h1>
+                        <ul>
+                            {examplesMap}
+                        </ul>
+                        <button className="primary-button">
+                            <Link to="/projets">Découvrir</Link>
+                        </button>
+                    </Content>
                 </Experience>
 
         );
