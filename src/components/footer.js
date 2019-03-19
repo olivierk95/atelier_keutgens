@@ -1,7 +1,7 @@
 import React from "react";
 
 //CSS
-import variables from '../styles/abstracts/variables.scss';
+import variables from "../styles/variables";
 import { parallelogramTop } from '../styles/elements/parallelogram';
 import styled from 'styled-components';
 

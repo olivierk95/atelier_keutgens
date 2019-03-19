@@ -1,17 +1,17 @@
-const parallelogramSlope = "10vw";
+import variables from "../variables";
 
 // Adaptable clip-path with a given slope and a variable width for the div.
 
 function clipPath(width) {
-    return `polygon(0 0, 100% calc(${parallelogramSlope} * (${width} / 100)), 100% 100%, 0 calc(100% - (${parallelogramSlope} * (${width} / 100))))`;
+    return `polygon(0 0, 100% calc(${variables.parallelogramSlope} * (${width} / 100)), 100% 100%, 0 calc(100% - (${variables.parallelogramSlope} * (${width} / 100))))`;
 };
 
 function clipPathTop(width) {
-    return `polygon(0 0, 100% calc(${parallelogramSlope} * (${width} / 100)), 100% 100%, 0 100%)`;
+    return `polygon(0 0, 100% calc(${variables.parallelogramSlope} * (${width} / 100)), 100% 100%, 0 100%)`;
 };
 
 function clipPathBottom(width) {
-    return `polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - (${parallelogramSlope} * (${width} / 100))))`;
+    return `polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - (${variables.parallelogramSlope} * (${width} / 100))))`;
 };
 
 function divWidth(width) {

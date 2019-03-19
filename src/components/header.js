@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import BurgerIcon from "../components/burger-icon";
 
 //CSS
-import variables from '../styles/abstracts/variables.scss';
+import variables from "../styles/variables";
 import { parallelogramBottom } from '../styles/elements/parallelogram';
 import styled from 'styled-components';
 
