@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{150:function(o,i,r){o.exports={colorAtelier:"#E20B00",colorMichel:"#eb8c11",colorSabina:"#e4e124",colorDark:"#2E3532",colorLight:"#7E9181",colorWhite:"#EEEEEE",fontSansSerif:'"Hind", sans-serif',fontSerif:'"Amiri", serif'}},153:function(o,i,r){o.exports={colorAtelier:"#E20B00",colorMichel:"#eb8c11",colorSabina:"#e4e124",colorDark:"#2E3532",colorLight:"#7E9181",colorWhite:"#EEEEEE",fontSansSerif:'"Hind", sans-serif',fontSerif:'"Amiri", serif'}}}]);
+//# sourceMappingURL=styles-4d1cf53707e05f02e98d.js.map
