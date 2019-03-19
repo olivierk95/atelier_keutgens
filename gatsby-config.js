@@ -11,5 +11,5 @@ module.exports = {
     siteMetadata: {
         title: "Atelier Architecture Keutgens",
     },
-
+    pathPrefix: "/atelier_keutgens",
 }

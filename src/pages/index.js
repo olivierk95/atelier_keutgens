@@ -15,17 +15,6 @@ import picture2 from "../img/home-picture2.jpg";
 import parallelogram from '../styles/elements/parallelogram';
 import styled from 'styled-components';
 
-const Carousel = styled.div`
-    ${parallelogram(100)};
-    height: 30rem;
-    background-size: 40rem auto;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0;
-`
 export default class index extends React.Component {
   constructor(props) {
     super(props)
@@ -55,15 +44,47 @@ export default class index extends React.Component {
   }
 
   render() {
+    const Carousel = styled.div`
+      ${parallelogram(100)};
+      height: 30rem;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; 
+        height: 100%;
+        background-size: 40rem auto;
+        background-position: center;
+        background-image: url(${this.state.pictures[this.state.currentPicture]});
+        filter: grayscale(100%);
+      }
+    `
+
+    const Content = styled.div`
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    `
+
     return (
       <Layout>
-          <Carousel style={{backgroundImage: `url(${this.state.pictures[this.state.currentPicture]})`}}>
-            <h1>Atelier d'Architecture Keutgens</h1>
-            <p>Région liégeoise</p>
-            <h2>Réalisons le projets de votre vie.</h2>
-            <button className="primary-button">
-              <Link to="/projets">Voir notre portfolio</Link>
-            </button>
+          <Carousel>
+            <Content>
+              <h1>Atelier d'Architecture Keutgens</h1>
+              <p>Région liégeoise</p>
+              <h2>Réalisons le projets de votre vie.</h2>
+              <button className="primary-button">
+                <Link to="/projets">Voir notre portfolio</Link>
+              </button>
+            </Content>
           </Carousel>
 
          <HomeProfil />
