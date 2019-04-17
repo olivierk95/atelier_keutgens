@@ -73,7 +73,7 @@ export default function homeExperience() {
         },
     ]; 
 
-    const experienceMap = experience.map(el => {
+    const experienceMap = experience.map((el, index) => {
         const Experience = styled.div`
             ${parallelogram(70)};
             position: relative;
@@ -91,15 +91,15 @@ export default function homeExperience() {
             }
         `
 
-        let examplesMap = el.examples.map(ex => {
+        let examplesMap = el.examples.map((ex, ind) => {
             return (
-                <li>{ex}</li>
+                <li key={ind}>{ex}</li>
             )
         });
 
         return (
 
-                <Experience>
+                <Experience key={index}>
                     <Content>
                         <h1>{el.title}</h1>
                         <ul>

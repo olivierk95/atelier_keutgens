@@ -24,8 +24,6 @@ export default function parallelogram(width) {
     return (
         `clip-path: ${clipPathCSS};
         width: ${widthCSS};
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
         `
     );
 };
@@ -36,8 +34,6 @@ export function parallelogramTop(width) {
     return (
         `clip-path: ${clipPathCSS};
         width: ${widthCSS};
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
         `
     );
 };

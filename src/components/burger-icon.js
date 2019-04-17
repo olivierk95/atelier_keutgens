@@ -5,47 +5,23 @@ import variables from "../styles/variables";
 import styled from 'styled-components';
 
 const Burger = styled.div`
-    width: 2.5rem;
+    width: 3rem;
     cursor: pointer;
     transition: 0.5s;
+    padding-top: .15rem;
 `
 
-const Bar = styled.div`
-    width: 2.5rem;
-    height: .4rem;
-    background-color: ${variables.colorDark};
-    margin: .4rem 0;
-    transition: 0.5s;
-`
-
-export default function BurgerIcon(props) {
-    let burger;
-    let bar1;
-    let bar2;
-    let bar3;
-
-    if (props.toggle) {
-        burger = {
-            transform: "translate(-.5rem, 0)",
-        };
-        bar1 = {
-            transform: "rotate(-45deg)",
-            transformOrigin: "top right",
-        };
-        bar2 = {
-            opacity: "0",
-        };
-        bar3 = {
-            transform: "rotate(45deg)",
-            transformOrigin: "bottom right",
-        };
-    }
-
+export default function BurgerIcon() {
+    
     return (
-        <Burger style={burger}>
-            <Bar className="burger-bar" style={bar1}/>
-            <Bar className="burger-bar" style={bar2}/>
-            <Bar className="burger-bar" style={bar3}/>
+        <Burger>
+            <svg viewBox="0 0 7 5" version="1.1" xlmns="http://www.w3.org/2000/svg">
+                <g fill={variables.colorDark}>
+                    <polygon points="0 0, 6 0, 7 1, 1 1" id="bar1" />
+                    <polygon points="0 2, 6 2, 7 3, 1 3" id="bar2" />
+                    <polygon points="0 4, 6 4, 7 5, 1 5" id="bar3" />
+                </g>
+            </svg>
         </Burger>
     );
 }   

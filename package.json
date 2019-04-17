@@ -14,10 +14,12 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
+    "animejs": "^3.0.1",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.1.23",
     "gatsby-plugin-sass": "^2.0.10",
     "gatsby-plugin-styled-components": "^3.0.7",
+    "gsap": "^2.1.2",
     "node-sass": "^4.11.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",

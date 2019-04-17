@@ -39,11 +39,11 @@ export default function homeAddedValue() {
         },
     ]; 
 
-    const addedValuesMap = addedValues.map(el => {
+    const addedValuesMap = addedValues.map((el, index) => {
 
         return (
 
-                <AddedValue>
+                <AddedValue key={index}>
                     <h1 style={{transform: "rotate(5deg)"}}>{el.title}</h1>
                     <p style={{transform: "rotate(5deg)"}}>{el.text}</p>
                 </AddedValue>

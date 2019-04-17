@@ -10,7 +10,8 @@ import Footer from "../components/footer";
 
 
 const Container = styled.div`
-    margin-top: 20vw;
+    margin-top: 4.6rem;
+    justify-content: center;
 `
 
 export default ({children}) => 

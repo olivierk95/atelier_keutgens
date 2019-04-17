@@ -14,7 +14,14 @@ const variables = {
     fontSerif: "'Amiri', serif",
 
     //MEASURES
-    parallelogramSlope: "10vw",
+    parallelogramSlope: "7vw",
+
+    gridPicturePhone: 30,
+    gridGapPicturePhone: 3,
+    gridPictureTablet: 20,
+    gridGapPictureTablet: 2,
+    gridPictureDesktop: 10,
+    gridGapPictureDesktop: 1.5
 }
 
 export default variables;
