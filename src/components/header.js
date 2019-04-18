@@ -15,6 +15,7 @@ const Header = styled.header`
   top:0;
   height: 4.6rem;
   z-index: 100;
+  width: 100%;
 `
 const Background = styled.div`
   background-color: ${variables.colorLight};

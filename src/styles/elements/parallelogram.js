@@ -20,7 +20,12 @@ function divWidth(width) {
 
 export default function parallelogram(width) {
     let clipPathCSS = clipPath(width);
-    let widthCSS = divWidth(width);
+    let widthCSS;
+    if (width === 100) {
+        widthCSS = "100%"
+    } else {
+        widthCSS = divWidth(width);
+    }
     return (
         `clip-path: ${clipPathCSS};
         width: ${widthCSS};
@@ -30,7 +35,12 @@ export default function parallelogram(width) {
 
 export function parallelogramTop(width) {
     let clipPathCSS = clipPathTop(width);
-    let widthCSS = divWidth(width);
+    let widthCSS;
+    if (width === 100) {
+        widthCSS = "100%"
+    } else {
+        widthCSS = divWidth(width);
+    }
     return (
         `clip-path: ${clipPathCSS};
         width: ${widthCSS};
@@ -40,7 +50,12 @@ export function parallelogramTop(width) {
 
 export function parallelogramBottom(width) {
     let clipPathCSS = clipPathBottom(width);
-    let widthCSS = divWidth(width);
+    let widthCSS;
+    if (width === 100) {
+        widthCSS = "100%"
+    } else {
+        widthCSS = divWidth(width);
+    }
     return (
         `clip-path: ${clipPathCSS};
         width: ${widthCSS};
