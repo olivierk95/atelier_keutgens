@@ -36,7 +36,7 @@ export default class index extends React.Component {
       this.setState({
         currentPicture: index,
       })
-    }, 100000)
+    }, 3000)
   }
 
   componentWillMount() {

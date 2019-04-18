@@ -7,7 +7,7 @@ import projets from "../data/projets-data";
 
 const Modal = styled.div`
     position: fixed;
-    background-color: rgba(50,50,50,0.5);
+    background-color: rgba(46,53,50,0.7);
     top: 0;
     left: 0;
     width: 100vw;

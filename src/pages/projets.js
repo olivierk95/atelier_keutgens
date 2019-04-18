@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../layouts/layout";
 import { device } from "../styles/mediaqueries";
-import { TweenMax, Power2 } from "gsap/TweenMax";
+import { TweenMax, Power0 } from "gsap/TweenMax";
 import Modal from "../components/projets-modal";
 
 import projets from "../data/projets-data";
@@ -44,12 +44,11 @@ const Content = styled.div`
     background-color: rgba(170, 123, 53,0.5);
     width: 100%;
     height: 100%;
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateY(100%);
+    transform: translateY(-100%);
     transition: 0.2s;
 `
 
@@ -71,7 +70,7 @@ export default class projetsGallery extends React.Component {
     }
 
     componentDidMount(){
-        TweenMax.staggerFrom(".pictures", 3, {y: 200, opacity: 0, ease:Power2.easeOut}, 0.3);
+        TweenMax.staggerFrom(".pictures", 3, {y: 200, opacity: 0, ease:Power0.easeOut}, 0.3);
     }
 
     handleClick(index) {
