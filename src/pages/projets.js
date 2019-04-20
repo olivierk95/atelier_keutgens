@@ -70,7 +70,7 @@ export default class projetsGallery extends React.Component {
     }
 
     componentDidMount(){
-        TweenMax.staggerFrom(".pictures", 3, {y: 200, opacity: 0, ease:Power0.easeOut}, 0.3);
+        TweenMax.staggerFrom(".pictures", 2, {y: 200, opacity: 0, ease:Power0.easeOut}, 0.3);
     }
 
     handleClick(index) {

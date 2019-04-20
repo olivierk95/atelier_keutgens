@@ -1,8 +1,11 @@
 import React from "react";
+import { device } from "../styles/mediaqueries";
 
 //CSS
 import variables from "../styles/variables";
 import styled from 'styled-components';
+import { parallelogramBottom } from '../styles/elements/parallelogram';
+
 import projets from "../data/projets-data";
 
 const Modal = styled.div`
@@ -10,20 +13,61 @@ const Modal = styled.div`
     background-color: rgba(46,53,50,0.7);
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: grid;
-    grid-template-columns: 1fr minmax(5rem, 30rem) 1fr;
-    grid-template-rows: minmax(7rem, 20vh) minmax(5rem, 30rem) 1fr;
+
+    @media ${device.phone} {
+        grid-template-columns: 1fr 60vw 1fr;
+        grid-template-rows: 8rem minmax(5rem, 50vh) 10rem auto;
+    }
+
+    @media ${device.desktop && device.tablet} {
+        grid-template-columns: 1fr 45vw 1fr;
+        grid-template-rows: 6rem minmax(5rem, 30rem) minmax(20vh, auto);
+    }
 `
 
-const ModalImage = styled.img`
-    max-width: 100%; 
-    max-height: 100%;
-    grid-column: 2 / span 1;
-    grid-row: 2 / span 1;
+const Image = styled.img`
     justify-self: center;
+    object-fit: contain;
+    @media ${device.phone} {
+        max-width: 100%; 
+        max-height: 45vh;
+    }
+    @media ${device.desktop && device.tablet} {
+        max-width: 100%; 
+        max-height: 65vh;
+    }
 `
+
+const ProjetInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    @media ${device.phone} {
+        grid-column: 1 / span 3;
+        grid-row: 2/ span 2;
+    }
+    @media ${device.desktop && device.tablet} {
+        grid-column: 2 / span 1;
+        grid-row: 2/ span 2;
+    }
+`
+
+const Information = styled.div`
+    background-color: ${variables.colorAtelier};
+    overflow-y: auto;
+    
+    @media ${device.phone} {
+        ${parallelogramBottom(100)}
+       max-height: 100%;
+    }
+    @media ${device.desktop && device.tablet} {
+        ${parallelogramBottom(45)};
+        max-height: 100%;
+    }
+`
+
 const CloseButton = styled.div`
     cursor: pointer;
     display: grid;
@@ -33,6 +77,9 @@ const CloseButton = styled.div`
     grid-column: 3;
     grid-row: 1;
     align-self: end;
+    @media ${device.phone} {
+        margin-bottom: .5rem;
+    }
 `
 
 const Fer = styled.h3`
@@ -66,22 +113,40 @@ const Mer = styled.h3`
 
 const LeftArrow = styled.svg`
     cursor: pointer;
-    width: 4rem;
-    grid-column: 1 / span 1;
-    grid-row: 2;
-    align-self: center;
     justify-self: right;
-    margin-right: 2rem;
+    @media ${device.phone} {
+        grid-column: 1 / span 1;
+        grid-row: 4;
+        width: 2rem;
+        align-self: end;
+        margin-bottom: 2rem;
+    }
+    @media ${device.desktop && device.tablet} {
+        grid-column: 1 / span 1;
+        grid-row: 2;
+        width: 4rem;
+        margin-right: 2rem;
+        align-self: center;
+    }
 `
 
 const RightArrow = styled.svg`
     cursor: pointer;
-    width: 4rem;
-    grid-column: 3 / span 1;
-    grid-row: 2;
-    align-self: center;
     justify-self: left;
-    margin-left: 2rem;
+    @media ${device.phone} {
+        grid-column: 3 / span 1;
+        grid-row: 4;
+        width: 2rem;
+        align-self: end;
+        margin-bottom: 2rem;
+    }
+    @media ${device.desktop && device.tablet} {
+        grid-column: 3 / span 1;
+        grid-row: 2;
+        width: 4rem;
+        margin-left: 2rem;
+        align-self: center;
+    }
 `
 
 export default function projetsModal(props) {
@@ -117,7 +182,16 @@ export default function projetsModal(props) {
                     </g>
                 </LeftArrow> 
                 : "" }
-            <ModalImage src={props.img} alt={props.title}></ModalImage>
+            <ProjetInfo>
+                <Image src={props.img} alt={props.title}></Image>
+                <Information>
+                    <p>jdlqjljwkljElle permet de projeter une ombre depuis un élément. Si une border-radius est définie sur l'élément avec l'ombre, la boîte de l'ombre prendra les mêmes arrondis. L'ordre des couches (z order) pour plusieurs ombres sera le même que pour les ombres texte (la première ombre est sur le dessus).
+
+Le générateur de box-shadow est un outil interactif qui permet de générer des valeurs pour box-shadow.Elle permet de projeter une ombre depuis un élément. Si une border-radius est définie sur l'élément avec l'ombre, la boîte de l'ombre prendra les mêmes arrondis. L'ordre des couches (z order) pour plusieurs ombres sera le même que pour les ombres texte (la première ombre est sur le dessus).
+
+Le générateur de box-shadow est un outil interactif qui permet de générer des valeurs pour box-shadow.</p>
+                </Information>
+            </ProjetInfo>
             {props.modal < projets.length-1 ? 
                 <RightArrow version="1.1" xlmns="http://www.w3.org/2000/svg" viewBox="0 0 10 14" onClick={props.handleNext}>
                     <g fill={variables.colorWhite}>
